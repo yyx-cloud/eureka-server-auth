@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: eureka-server-auth
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+#    如果开启registerWithEureka，需要使用ip注册，否则按照系统名称注册导致无法找到服务
+    prefer-ip-address: true
+security:
+  basic:
+#   开启基于Http Basic认证
+    enabled: true
+  user:
+#   配置登陆的账号和密码
+    name: admin
+    password: password
